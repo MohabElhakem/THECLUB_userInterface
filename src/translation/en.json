@@ -1,0 +1,7 @@
+{
+    "login" : "Login",
+    "phone" : "Phone Number",
+    "password" : "Password",
+    "submit" : "Submit",
+    "passwordPlaceHolder": "Enter your password"
+}

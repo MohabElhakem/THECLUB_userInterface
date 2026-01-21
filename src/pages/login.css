@@ -1,0 +1,164 @@
+/* ===================== RTL / LTR ===================== */
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+.rtl.login-container{
+  direction: rtl;
+  text-align: right;
+}
+.rtl .formsubmit {
+  width: 150px !important;
+  margin-left: 26% !important; 
+}
+/* ===================== BODY ===================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: monospace;
+  /* center wrapper horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ===================== WRAPPER ===================== */
+ .wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  width:800px;
+  height: 400px;
+  margin: 0 auto;
+ }
+ /* ===================== Logo Container ===================== */
+
+ .logo_container{
+  width: 400;
+  max-width: 400px;
+  display: flex;
+ }
+
+ .logo_container img {
+  width: 100%;
+  height: auto;     /* maintain aspect ratio */
+  object-fit: contain;
+ }
+
+
+  /* ===================== Login Container ===================== */
+  .login-container{
+    margin-left: auto;
+    width: 400px;
+    height: auto;
+
+  }
+ /*----
+  -this control the form it self and every thing in it 
+  -from with the submit button
+ -----*/
+  .login-container form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+   /*----
+  -this control the form it self and every thing in it 
+  -form with the submit button
+ -----*/
+  .login-container form label {
+    font-size: smaller;
+    font-weight: bold;
+    color: black;
+  }
+/*----
+-this is the container label+ input box
+----*/
+  .login-container .formcombox{
+    width: 99%;
+    padding-bottom: 10px;
+  }
+/*----
+-this for just the div of the input box
+----*/
+  .login-container .inputbox{
+    width: 90% ;
+  }
+
+/*----
+-this to touch the inbut box itself
+----*/
+.login-container .inputbox input{
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  color: #000000;
+}
+.login-container .inputbox input:focus{
+outline: none;
+border: auto;
+}
+
+/*----
+-this is for the button control
+----*/
+.login-container form .formsubmit{
+  margin-top: 10px;
+  width : 25%;
+  margin-left: 30%;
+
+}
+.login-container form .formsubmit:hover,
+.login-container form .formsubmit:focus,
+.login-container form .formsubmit:focus-visible {
+  outline: none;
+  background-color: #dc4a0c;
+  border: 1px solid #dc4a0c ;
+  box-shadow: none;
+}
+
+.login-container form .formsubmitBox {
+margin-top: 50px;
+ display: flex;
+}
+
+
+/*=============================Phone style================================*/
+
+@media screen and (max-width: 800px){
+  .wrapper{
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    gap: 10px;
+  }
+  .logo_container{
+    width: 100%;
+  }
+  .login-container .inputbox{
+    width: 100% ;
+  }
+  .formsubmitBox {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    margin-top: 20px;
+  }
+
+  .formsubmit {
+    margin-left: 0 !important; /* remove LTR margin */
+    width: 150px;              /* optional fixed width */
+  }
+  .rtl .formsubmit {
+  width: 140px !important;
+  margin-left: 0% !important; 
+ }
+}
