@@ -31,7 +31,7 @@ function Login() {
                     number: fullNumber,
                     password
             })
-            onsole.log(data);
+            console.log(data);
             alert(data.message);
         }catch(error){
             console.error("Login failed",error);
@@ -47,7 +47,7 @@ function Login() {
 
     // Render the LoginForm component and pass props
     return (
-
+        <div className="login-page">
         <div className="wrapper">
 
             <div className= "logo_container">
@@ -93,6 +93,7 @@ function Login() {
             </div>
 
 
+        </div>
         </div>
     )
 }

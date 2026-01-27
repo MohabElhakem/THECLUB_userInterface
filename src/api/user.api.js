@@ -37,3 +37,8 @@ export async function signupUser(userInfo) {
 * the provided userInfo as the request body.
 * The function then returns the data from the response.
 **/
+
+export async function authMe(){
+  const response = await api.get('/auth/me')
+  return response.data;
+}

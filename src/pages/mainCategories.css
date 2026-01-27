@@ -1,0 +1,138 @@
+
+/*================= the page layout =======================*/
+.category-page-loading{
+    background-color: #fff;
+    color: #315762;
+    width: 100%;
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+    justify-content: center;
+}
+/*================ loading Dots ============================*/
+
+.category-page{
+    background-color: #e9e9e9;
+    width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    font-family: monospace;
+    box-sizing: border-box; /* ensure padding included in height */
+    padding-top: 60px;
+    direction: rtl;
+    text-align: right;
+    padding-bottom: 60px;
+    font-size: larger;
+}
+
+/*================== header ==============================*/
+
+.header-wrapper{
+    position: fixed;
+    top:0;
+    right: 0;
+    width: 100vw;
+    height: 60px;
+    box-shadow:  0 4px 6px #315762 ;
+    display: flex;           /* Flexbox for vertical alignment */
+    align-items: center;     /* Center vertically */
+    justify-content: space-between; /* push items to far sides */
+    padding: 0 16px;
+    color: #315762;
+    font-size:50%;
+    text-align: right;
+    direction: rtl;
+    background-color: #fff;
+}
+.header-wrapper h1{
+    font-weight:bolder;
+}
+.header-wrapper img{
+
+    max-height: 35%;
+    margin-left:40px;
+
+}
+
+/*========================category cards==================*/
+.categorycard-wrapper{
+    margin-top: 30px;
+    max-width: 80%;
+    margin-right: 20px;
+    padding: 20px ;
+    background-color: #fff;
+    border-radius: 20px;
+    padding-top: 30px;
+    box-shadow:  0 4px 6px #315762 ;
+    min-height: 500px;
+    margin-bottom: 50px;
+}
+.categorycard-wrapper .displayCard{
+    background-color: #fff;
+    flex-direction: row;
+    display: block;
+    margin-bottom: 10px;
+    width: 80%;
+    text-align: right;
+    border-right: 2px solid #315762;
+    margin-right: 10px;
+    color: black;
+    border-radius: 0;
+
+}
+
+
+.categorycard-wrapper .displayCard:hover{
+    background-color: #e77436;
+    outline: none;
+    border: 1px solid #e9631a;
+}
+
+/*=======================Admin button=================*/
+.adminbutton-wrapper{
+    margin-right: 20px;
+    margin-top: 30px;
+    background-color: #fff;
+    max-width: 80%;
+    padding: 20px ;
+    text-align: right;
+    border-radius: 20px;
+    box-shadow:  0 4px 6px #315762 ;
+
+}
+.admin-button{
+    background-color: #fff;
+    flex-direction: row;
+    display: block;
+    width: 80%;
+    text-align: right;
+    border-right: 2px solid #315762;
+    margin-right: 10px;
+    color: black;
+    border-radius: 0;
+}
+.admin-button:hover{
+    background-color: #e77436;
+    border: 1px solid #e9631a;
+    
+}
+
+/*===================== mobile style=======================*/
+@media screen and (max-width: 500px){
+    .category-page{
+        justify-content: center;
+        align-items: center;
+    }
+    .categorycard-wrapper{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 30px;
+    }
+    .adminbutton-wrapper{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 30px;
+    }
+}

@@ -1,29 +1,60 @@
 /* ===================== RTL / LTR ===================== */
-.ltr {
+
+.rtl .formsubmit {
+  width: 150px !important;
+  margin-right: 25% !important; 
+}
+
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl .login-container form,
+.rtl .login-container label {
+  text-align: right;
+}
+
+.rtl .login-container input {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Keep numbers & passwords LTR */
+input[type="tel"],
+input[type="password"],
+input[type="email"] {
   direction: ltr;
   text-align: left;
 }
 
-.rtl.login-container{
+.rtl .login-container input::placeholder {
   direction: rtl;
   text-align: right;
 }
-.rtl .formsubmit {
-  width: 150px !important;
-  margin-left: 26% !important; 
+
+.rtl input[type="password"] {
+  direction: rtl;
+  text-align: right;
 }
+
+.rtl input[type="password"]::placeholder {
+  direction: rtl;
+  text-align: right;
+}
+
 /* ===================== BODY ===================== */
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  font-family: monospace;
-  /* center wrapper horizontally and vertically */
+.login-page {
+  width: 100vw;           /* full viewport width */
+  height: 100vh;          /* full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background-color: #fff; /* same as before */
+  font-family: monospace;
+  overflow: hidden;       /* prevent scrollbars if wrapper is smaller */
 }
 
 /* ===================== WRAPPER ===================== */
@@ -121,8 +152,8 @@ border: auto;
 .login-container form .formsubmit:focus,
 .login-container form .formsubmit:focus-visible {
   outline: none;
-  background-color: #dc4a0c;
-  border: 1px solid #dc4a0c ;
+  background-color: #e9631a;
+  border: 1px solid #e9631a ;
   box-shadow: none;
 }
 
@@ -137,13 +168,14 @@ margin-top: 50px;
 @media screen and (max-width: 800px){
   .wrapper{
     flex-direction: column;
-    width: 95%;
+    width: 300px;
     height: auto;
     gap: 10px;
   }
   .logo_container{
     width: 100%;
   }
+  .login-container,
   .login-container .inputbox{
     width: 100% ;
   }
@@ -155,10 +187,10 @@ margin-top: 50px;
 
   .formsubmit {
     margin-left: 0 !important; /* remove LTR margin */
-    width: 150px;              /* optional fixed width */
+    width: 50%;              /* optional fixed width */
   }
   .rtl .formsubmit {
-  width: 140px !important;
-  margin-left: 0% !important; 
+  width: 100px !important;
+  margin-left: 24% !important; 
  }
 }
