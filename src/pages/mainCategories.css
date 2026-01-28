@@ -118,7 +118,10 @@
     border: 1px solid #e9631a;
     
 }
-
+.admin-button:focus,
+.admin-button:focus-visible{
+    outline: none;
+}
 /*===================== mobile style=======================*/
 @media screen and (max-width: 500px){
     .category-page{

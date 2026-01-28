@@ -10,7 +10,7 @@ export async function MainCategories (){
         return response.data
     }catch(error){
         throw error.response?.data || {
-        message: "Something went wrong",
+        message: "Something went wrong on the MainCategory",
         status: "error"
     };
     }
@@ -19,3 +19,16 @@ export async function MainCategories (){
  * the api is to get the array of all the categories we have
  * the endpoint is ('category/main/categories')
  */
+
+export async function NewCategory(info){
+    try{
+        const response = await api.post('/category/new/category',info)
+        return response.data
+    }
+    catch(error){
+        throw error.response?.data ||{
+            message: "Something went wrong on the newCategory",
+            status: error
+        }
+    }
+}

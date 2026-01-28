@@ -166,6 +166,9 @@ margin-top: 50px;
 /*=============================Phone style================================*/
 
 @media screen and (max-width: 800px){
+  .login-page{
+    overflow-y: auto;
+  }
   .wrapper{
     flex-direction: column;
     width: 300px;

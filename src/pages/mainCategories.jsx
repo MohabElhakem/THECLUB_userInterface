@@ -2,12 +2,11 @@ import React from "react";
 import { useEffect , useState } from "react";
 import LoadingDots from '../helpers/loadingDots'
 import DisplayCard from "../components/displayCard";
-import './mainCategories.css'
+import PopUpForm from "./newCategory";
+import './mainCategories.css';
 import { authMe } from "../api/user.api";
-import {MainCategories} from '../api/category.api'
+import {MainCategories} from '../api/category.api';
 import { useNavigate } from "react-router-dom";
-
-
 
 
 
@@ -15,6 +14,7 @@ function MainCategoriesPage() {
   const [loading , setLoading] = useState(true)
   const [categories , setCategories] = useState([]);
   const [userRole , setUserRole] = useState('')
+  const [showForm , setShowForm] = useState(false);
   const navigate = useNavigate();
 
   // useEffect to stimulate the feteching of the data
@@ -83,8 +83,37 @@ function MainCategoriesPage() {
     []
   )
   */
-  
 
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  // This useEffect to stop the scrolling
+  useEffect(() => {
+    if (showForm) {
+      // Disable scrolling
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup just in case component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showForm]);
+
+  ////
+  ////
+  ////
+  ////
+  ////
+  ////
+  ////
 
   if(loading){
   return (
@@ -106,7 +135,7 @@ function MainCategoriesPage() {
         <div className="adminbutton-wrapper">
         <button
           className="admin-button"
-          onClick={()=> navigate('/test2')}
+          onClick={()=> setShowForm(true)}
         >
           اضافه فئه
         </button>
@@ -122,6 +151,13 @@ function MainCategoriesPage() {
         />
       ))}
       </div>
+
+      {/* Do this when he hit the button */}
+      {showForm && (
+        <PopUpForm onClose={()=> setShowForm(false)}/>
+      )};
+
+
     </div>
   )
 

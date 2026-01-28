@@ -9,7 +9,7 @@ export async function loginUser(userInfo) {
     return response.data;
   } catch (error) {
     throw error.response?.data || {
-      message: "Something went wrong",
+      message: "Something went wrong on the login",
       status: "error"
     };
   }
