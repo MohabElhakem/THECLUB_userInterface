@@ -1,0 +1,37 @@
+.header-wrapper{
+    position: fixed;
+    top:0;
+    right: 0;
+    width: 100vw;
+    height: 60px;
+    box-shadow:  0 4px 6px #315762 ;
+    display: flex;           /* Flexbox for vertical alignment */
+    align-items: center;     /* Center vertically */
+    justify-content: space-between; /* push items to far sides */
+    padding: 0 16px;
+    color: #315762;
+    font-size:50%;
+    text-align: right;
+    direction: rtl;
+    background-color: #fff;
+    font-family: monospace;
+}
+.header-wrapper h1{
+    font-weight:bolder;
+}
+.header-wrapper img{
+
+    max-height: 35%;
+    margin-left:40px;
+
+}
+
+@media screen and (max-width: 500px){
+    .header-wrapper{
+        height: 40px;
+    }
+    .header-wrapper h1{
+    font-weight:bolder;
+    font-size: 10px;
+}
+}

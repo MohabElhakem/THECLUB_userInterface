@@ -20,6 +20,11 @@ export async function MainCategories (){
  * the endpoint is ('category/main/categories')
  */
 
+
+//--------------------
+// New Category
+//--------------------
+
 export async function NewCategory(info){
     try{
         const response = await api.post('/category/new/category',info)
@@ -28,6 +33,22 @@ export async function NewCategory(info){
     catch(error){
         throw error.response?.data ||{
             message: "Something went wrong on the newCategory",
+            status: error
+        }
+    }
+}
+
+
+//---------------------
+// Featch a Category
+//---------------------
+export async function FetchCategory(id) {
+    try{
+        const response = await api.get(`/category/${id}`);
+        return response.data
+    }catch(error){
+        throw error.response?.data||{
+            message: "somthing went wrong on featch teh category",
             status: error
         }
     }

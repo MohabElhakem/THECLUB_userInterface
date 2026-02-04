@@ -6,7 +6,7 @@ const DisplayCard = ({id , label}) => {
     const navigate = useNavigate();
 
     const handleClick = ()=> {
-        navigate(`category/${id}`)
+        navigate(`${id}`)
     }
     return (
         <button 

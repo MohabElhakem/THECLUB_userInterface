@@ -1,6 +1,6 @@
 
 /*================= the page layout =======================*/
-.category-page-loading{
+.loading-page-layout{
     background-color: #fff;
     color: #315762;
     width: 100%;
@@ -45,6 +45,7 @@
     text-align: right;
     direction: rtl;
     background-color: #fff;
+    font-family: monospace;
 }
 .header-wrapper h1{
     font-weight:bolder;
@@ -137,5 +138,12 @@
         margin-left: 20px;
         margin-right: 20px;
         margin-top: 30px;
+    }    
+    .header-wrapper{
+        height: 40px;
     }
+    .header-wrapper h1{
+    font-weight:bolder;
+    font-size: 10px;
+}
 }

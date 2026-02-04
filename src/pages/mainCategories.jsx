@@ -26,7 +26,6 @@ function MainCategoriesPage() {
           const Me = await authMe();
           if (Me.stay === false){
             alert("يرجي تسجيل الدخول مره اخري")
-            //await new Promise(resolve => setTimeout(resolve,2000));
             navigate('/user/login')
             return; // stop here
           }
@@ -117,7 +116,7 @@ function MainCategoriesPage() {
 
   if(loading){
   return (
-    <div className="category-page-loading">
+    <div className="loading-page-layout">
       <div className="loadingDots-wrapper">
         <LoadingDots/> 
       </div>
