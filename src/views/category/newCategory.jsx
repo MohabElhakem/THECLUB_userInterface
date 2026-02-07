@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import FormInput from "../components/forminput";
-import { NewCategory } from "../api/category.api";
+import FormInput from "../../components/forminput";
+import { NewCategory } from "../../api/category.api";
 import './newCategory.css'
 
 

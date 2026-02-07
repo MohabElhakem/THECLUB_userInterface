@@ -1,0 +1,73 @@
+/*================popModel overlay===================*/
+.popModel-overlay{
+    position: fixed;
+    top:0;
+    right:0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+/*============== popModel content ================*/
+.popModel-content{
+    background:#315762;
+    height: 200px;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #000000;
+}
+
+.popModel-content form label{
+    color: #fff;
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 50px;
+    justify-content: center;
+
+}
+.popModel-content .formcombox{
+    margin-top: 5%;
+}
+.popModel-content .inputbox{
+    padding-top :20px;
+}
+.popModel-content .inputbox input{
+    background-color: #fff;
+    width: 97%;
+    height: 30px;
+    border: none;
+    color: #000000;
+    box-shadow: 0 1px 10px #fff ;
+    
+}
+.popModel-content .inputbox input:focus {
+    outline: none;  /* removes the blue outline */
+    border-color: #fff; /* optional, highlight border on focus */
+}
+.popModel-content .inputbox input::placeholder{
+    font-size: larger;
+}
+.popModel-content .popModel-action{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+.popModel-content form button{
+    background-color: transparent;
+    font-size: xx-large;
+}
+.popModel-content form button:hover,
+.popModel-content form button:focus,
+.popModel-content form button:focus-visible{
+    border: 1px solid transparent;
+    outline: none;
+}

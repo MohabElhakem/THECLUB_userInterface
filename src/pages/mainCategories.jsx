@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect , useState } from "react";
 import LoadingDots from '../helpers/loadingDots'
 import DisplayCard from "../components/displayCard";
-import PopUpForm from "./newCategory";
+import PopUpForm from "../views/category/newCategory";
 import './mainCategories.css';
 import { authMe } from "../api/user.api";
 import {MainCategories} from '../api/category.api';

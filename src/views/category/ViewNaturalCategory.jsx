@@ -1,9 +1,36 @@
-import './ViewNaturalCategory.css'
+import './ViewNaturalCategory.css';
+import { useState ,useEffect } from 'react';
+import PopNewCatForm  from './newSubCateory.jsx';
 //--------------------------------------------
 // View the options of a natural categpry
 //--------------------------------------------
-const ViewNaturalCat = ({ME , id})=>{
+const ViewNaturalCat = ({ME , id })=>{
+
+    const [showForm , setShowForm] = useState(false);
+    const handleOpenSubBox = () => {
+        setShowForm(true); // ← click changes the state
+    };
+    const handleCloseForm = () => {
+        setShowForm(false); // ← form can call this to hide itself
+    };
+
+    // A use Effect to stop the scrollong
+      useEffect(() => {
+        if (showForm) {
+          // Disable scrolling
+          document.body.style.overflow = "hidden";
+        } else {
+          // Enable scrolling
+          document.body.style.overflow = "auto";
+        }
     
+        // Cleanup just in case component unmounts
+        return () => {
+          document.body.style.overflow = "auto";
+        };
+      }, [showForm]);
+
+
     if(ME === "ADMIN"){
         return(
             <div className="VNC-layout">
@@ -15,12 +42,20 @@ const ViewNaturalCat = ({ME , id})=>{
 
                     </div>
 
-                    <div className="sub-box">
+                    <div className="sub-box" onClick={handleOpenSubBox}>
                         <h3>ادخال فئه</h3>
                         <p>عند الضغط سوف تقوم باضافه فئه فرعيه ، وسوف تكون فئه اب خاصه للفئات المضافه</p>
                     </div>
 
                 </div>
+
+            {/* now for the conditional forms */}
+            {showForm === true && (
+                <PopNewCatForm
+                    onClose={handleCloseForm}
+                    id={id}
+                />
+            )}
             </div>
         )
     } 

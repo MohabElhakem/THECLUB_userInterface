@@ -10,3 +10,8 @@
   color: #555;
   pointer-events: none; /* user can type normally */
 }
+.error-text {
+  color: #ffffff;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}

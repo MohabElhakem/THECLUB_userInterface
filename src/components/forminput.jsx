@@ -1,6 +1,6 @@
 import "./forminput.css"
 
-export function FormInput({ label, type, name ,value, placeholder, onChange }) {
+export function FormInput({ label, type, name ,value, placeholder, onChange , error}) {
     // FormInput = functional component
     // Props: label, type, prefix, placeholder ,value and name (all passed from parent)
 
@@ -27,7 +27,10 @@ export function FormInput({ label, type, name ,value, placeholder, onChange }) {
                 placeholder = hint text inside input
             */}
             </div>
+            {/* Render error if passed */}
+            {error && <p className="error-text">{error}</p>}
         </div>
+
     );
 }
 

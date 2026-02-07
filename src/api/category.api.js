@@ -48,7 +48,22 @@ export async function FetchCategory(id) {
         return response.data
     }catch(error){
         throw error.response?.data||{
-            message: "somthing went wrong on featch teh category",
+            message: "somthing went wrong on featch the category",
+            status: error
+        }
+    }
+}
+
+//--------------------------
+// New subCategory
+//---------------------------
+export async function NewSubCategory(parentId,info){
+    try{
+        const response = await api.post(`/category/new/sub/category/${parentId}`,info)
+        return response.data
+    }catch(error){
+        throw error.response?.data ||{
+            message: "somthing went wrong on newSubCategory",
             status: error
         }
     }

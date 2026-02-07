@@ -4,6 +4,7 @@ import { authMe } from "../api/user.api";
 import { useNavigate , useParams } from "react-router-dom";
 import LoadingDots from "../helpers/loadingDots";
 import ViewNaturalCat from "../views/category/ViewNaturalCategory";
+import ViewSubCat from "../views/category/ViewSubCategory";
 import './singleCategory.css'
 
 function SingleCategory(){
@@ -15,6 +16,7 @@ function SingleCategory(){
     const [loading , setLoading] = useState(true); // for the loading status
     const [userRole , setRole] = useState(''); // to render the component ony for admins
     const [Type , setType] = useState('null');
+    const [breadcrumb , setBreadcrumb] = useState([])
 
     // use Effect to featch the dataneeded int this api
     useEffect(()=>{
@@ -43,8 +45,9 @@ function SingleCategory(){
                 const categoryData = await FetchCategory(id);
                 console.log(categoryData);
                 setCategory(categoryData.category);
-                
-                // now set the typw coming from the backend
+                setChildren(categoryData.category.children || [])
+                setBreadcrumb(categoryData.breadcrumb ||[])
+                // now set the type coming from the backend
                 setType(categoryData.Type);
                 console.log(categoryData.Type)
 
@@ -95,13 +98,18 @@ function SingleCategory(){
 
             {/* Seconed case a leaf category */}
             {Type === "leaf" && (
-                <h1> its leaf add products</h1>
+                <h3>its a leaf category</h3>
             )}
 
             {/* Thired case a parent category */}
             {Type === "sub" && (
-                <h1>its subCategory add categories in it if you want </h1>
+                <ViewSubCat
+                    children={children}
+                    ME={userRole}
+                    parentID = {id}
+                />
             )}
+
         </div>
     )
 
