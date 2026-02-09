@@ -33,21 +33,19 @@ const ViewNaturalCat = ({ME , id })=>{
 
     if(ME === "ADMIN"){
         return(
-            <div className="VNC-layout">
-                <div className="VNC-wrapper">
 
-                    <div className="product-box">
-                        <h3>ادخال منتج</h3>
-                        <p>عند الضغط سوف تقوم باضافه منج لهذه الفئه ، و سوف تكون فئه خاصه بالمنتجات فقط</p>
+            <div className="VNC-wrapper">
 
-                    </div>
+                <button>
+                <h3>ادخال منتج</h3>
+                <p>عند الضغط سوف تقوم باضافه منج لهذه الفئه ، و سوف تكون فئه خاصه بالمنتجات فقط</p>
+                </button>
 
-                    <div className="sub-box" onClick={handleOpenSubBox}>
-                        <h3>ادخال فئه</h3>
-                        <p>عند الضغط سوف تقوم باضافه فئه فرعيه ، وسوف تكون فئه اب خاصه للفئات المضافه</p>
-                    </div>
-
-                </div>
+                <button
+                onClick={handleOpenSubBox}>
+                <h3>ادخال فئه</h3>
+                <p>عند الضغط سوف تقوم باضافه فئه فرعيه ، وسوف تكون فئه اب خاصه للفئات المضافه</p>
+                </button>
 
             {/* now for the conditional forms */}
             {showForm === true && (
@@ -60,15 +58,13 @@ const ViewNaturalCat = ({ME , id })=>{
         )
     } 
     else{
-        return(
-            <div className="VNC-layout">
-                <div className="VNC-wrapper">
+    return(
+            <div className="VNC-wrapper">
 
                 <div className='vendor-box'>
                     <p>لم يقوم المسؤل بتحديد هذه الفئه برجاء الانتظار حتي تتم مراجعتها من قبل المسؤل</p>
                 </div>
 
-                </div>
             </div>
         )
     }

@@ -7,6 +7,8 @@ import './mainCategories.css';
 import { authMe } from "../api/user.api";
 import {MainCategories} from '../api/category.api';
 import { useNavigate } from "react-router-dom";
+import './layout.css'
+import Headerlayout from "../components/Header.jsx";
 
 
 
@@ -115,46 +117,50 @@ function MainCategoriesPage() {
   ////
 
   if(loading){
-  return (
-    <div className="loading-page-layout">
-      <div className="loadingDots-wrapper">
-        <LoadingDots/> 
-      </div>
-    </div>
-  )
-  }
-  return(
-    <div className="category-page">
-      <header className="header-wrapper">
-        <h1>الفئات</h1>
-        <img src="https://res.cloudinary.com/dwevurdds/image/upload/v1769443811/IMG_4818_mpuejx.jpg" alt="icon" />
-      </header>
-
-      {userRole === "ADMIN" && (
-        <div className="adminbutton-wrapper">
-        <button
-          className="admin-button"
-          onClick={()=> setShowForm(true)}
-        >
-          اضافه فئه
-        </button>
+    return (
+      <div className="loading-page-layout">
+        <div className="loadingDots-wrapper">
+          <LoadingDots/> 
         </div>
-      )}
-
-      <div className="categorycard-wrapper">
-        {categories.map((cat) => (
-        <DisplayCard
-          key={cat.id}
-          id={cat.id}
-          label={cat.name}  // <-- name property
-        />
-      ))}
       </div>
+    )
+    }
+  return(
+    <div className="PageLayout">
 
-      {/* Do this when he hit the button */}
-      {showForm && (
-        <PopUpForm onClose={()=> setShowForm(false)}/>
-      )};
+      <Headerlayout 
+      Center = "الفئات"
+      />
+    
+      <div className="PageContent">
+
+
+          {userRole === "ADMIN" && (
+            <div className="adminbutton-wrapper">
+              <button
+              onClick = {()=>setShowForm(true)}>
+               اضافه فئه
+              </button>
+            </div>
+          )}
+
+        <div className="categorycard-wrapper">
+
+          {categories.map((cat) => (
+          <DisplayCard
+            key={cat.id}
+            id={cat.id}
+            label={cat.name}  // <-- name property
+          />
+        ))}
+        </div>
+
+        {/* Do this when he hit the button */}
+        {showForm && (
+          <PopUpForm onClose={()=> setShowForm(false)}/>
+        )};
+
+      </div>
 
 
     </div>

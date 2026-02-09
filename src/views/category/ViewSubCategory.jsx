@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import DisplayCard from "../../components/displayCard";
 import PopNewCatForm from "./newSubCateory";
-import './ViewSubCategory.css'
 
 
 function ViewSubCat ({children , ME , parentID}) {

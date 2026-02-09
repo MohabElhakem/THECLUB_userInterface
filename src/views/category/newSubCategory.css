@@ -18,7 +18,8 @@
 /*============== popModel content ================*/
 .popModel-content{
     background:#315762;
-    height: 200px;
+    min-height: 200px;
+    height: auto;
     width: 250px;
     padding: 20px;
     border-radius: 10px;
@@ -64,10 +65,15 @@
 .popModel-content form button{
     background-color: transparent;
     font-size: xx-large;
+    color:#fff;
+    box-shadow: none;
 }
 .popModel-content form button:hover,
 .popModel-content form button:focus,
 .popModel-content form button:focus-visible{
     border: 1px solid transparent;
     outline: none;
+}
+.popModel-content .popModel-action button:hover{
+    background-color: transparent !important;
 }

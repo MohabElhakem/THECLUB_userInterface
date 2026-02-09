@@ -1,0 +1,39 @@
+.HWL{
+    color: black;
+    border-bottom: 2px solid #0000008c;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 80%;
+    height: 60px;
+    justify-self: center;
+    font-family:'Changa', sans-serif;
+}
+.HWL h2{
+    align-self:flex-end;
+    justify-self: start;
+}
+.HWL h3{
+    font-weight: 200;
+}
+.HWL img{
+    align-self:flex-end;
+    justify-self: start;
+    height:50%;
+    margin-bottom: 10px;
+}
+.center{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    color: #000000a2;
+}
+
+@media screen and (max-width: 650px){
+    .HWL h2{
+        font-size: medium
+    }
+    .HWL h3{
+        font-size: small;
+    }
+}

@@ -5,7 +5,9 @@ import { useNavigate , useParams } from "react-router-dom";
 import LoadingDots from "../helpers/loadingDots";
 import ViewNaturalCat from "../views/category/ViewNaturalCategory";
 import ViewSubCat from "../views/category/ViewSubCategory";
+import Headerlayout from "../components/Header";
 import './singleCategory.css'
+import './layout.css'
 
 function SingleCategory(){
 
@@ -82,34 +84,46 @@ function SingleCategory(){
         )
     }
     return(
-        <div className="singleCategory-layout">
-            <header className="header-wrapper">
-                <h1> الفئات/ {category?.name}</h1>
-                <img src="https://res.cloudinary.com/dwevurdds/image/upload/v1769443811/IMG_4818_mpuejx.jpg" alt="icon" />
-            </header>
-            
-            {/* First case neither leaf nor a parent */}
-            {Type === "nutural" && (
-                <ViewNaturalCat 
-                    ME = {userRole}
-                    id = {id}
-                />
-            )}
+        <div className="PageLayout">
 
-            {/* Seconed case a leaf category */}
-            {Type === "leaf" && (
-                <h3>its a leaf category</h3>
-            )}
+            <Headerlayout 
+                Center = "الفئات"
+            />
+                
+            <div className="optinal-header"> 
+                {breadcrumb.map((item, index) => {
+                    return (
+                        <span key={item.id}>
+                        {item.name}
+                        {index < breadcrumb.length - 1 && " / "}
+                        </span>
+                    );
+                })}
+            </div>
+            <div className="PageContent">
+                {/* First case neither leaf nor a parent */}
+                {Type === "nutural" && (
+                    <ViewNaturalCat 
+                        ME = {userRole}
+                        id = {id}
+                    />
+                )}
 
-            {/* Thired case a parent category */}
-            {Type === "sub" && (
-                <ViewSubCat
-                    children={children}
-                    ME={userRole}
-                    parentID = {id}
-                />
-            )}
+                {/* Seconed case a leaf category */}
+                {Type === "leaf" && (
+                    <h3>its a leaf category</h3>
+                )}
 
+                {/* Thired case a parent category */}
+                {Type === "sub" && (
+                    <ViewSubCat
+                        children={children}
+                        ME={userRole}
+                        parentID = {id}
+                    />
+                )}
+
+            </div>
         </div>
     )
 

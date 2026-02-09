@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/cairo": "^5.2.7",
+    "@fontsource/changa": "^5.2.8",
     "axios": "^1.13.2",
     "dotenv": "^17.2.3",
     "i18next": "^25.7.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-i18next": "^16.5.3",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.12.0"
   },
   "devDependencies": {
